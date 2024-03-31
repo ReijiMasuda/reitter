@@ -1,0 +1,72 @@
+<style>
+  .button {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #ff4500;
+    border: solid 2px #ff4500;
+    border-radius: 3px;
+    transition: .4s;
+  }
+
+  .button:hover {
+    background: #ff4500;
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+    color:blue;
+  }
+</style>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<link href="{% static 'css/style.css' %}" rel="stylesheet"> 
+<link href="{% static 'images/reitter_l.ico' %}" rel="icon"> 
+<title>reitter:トップ</title>
+
+<body>
+<h1>
+  <a href="#"><div style="text-align: center"><p style="background-color:#00FFFF"><font color = "white"><big>・・・Reitter🕊・・・</big></font></p></div></a>
+</h1>
+
+<div class="center">
+  <p class="komentoran">🖊みんなのコメント</p>
+  {% for tweet in tweet_list %}
+  <div class="box"><p><big>
+    [{{ tweet.created_at|date:'H:i'}}]
+    {{tweet.name}}さん:
+    {{tweet.message}} 
+    </big>
+    <a href="{% url 'a:edit_tweet' tweet.id %}" class="sousin">編集</a>
+    <a href="{% url 'a:delete_tweet' tweet.id %}" class="button">削除</a>
+  </p></div>
+  {% endfor %}
+</div>
+
+<h2></h2>
+
+<p class="komentoran">✉投稿✉</p>
+<form action="post/" method="POST">
+  {% csrf_token %}
+  <div>
+    <label for="name"><big>　名　前　:</big></label>
+    <input type="text" name="name" />
+  </div>
+  <br>
+  <div>
+    <label for="message"><big>メッセージ:</big></label>
+    <input type="text" name="message" />
+  </div>
+  <br>
+
+  <input type="submit" class="sousin">
+</form>
+  <p style="text-align: right">✉お問い合わせは👉<a href="contact">こちら</a>から</p>
+<h2>
+  <div style="text-align: center"><p style="background-color:#00FFFF"><font color = "white">2024@reitter:top</font></p></div>
+</h2>
+</body>
+</html>

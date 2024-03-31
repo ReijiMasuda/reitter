@@ -1,0 +1,39 @@
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<link href="{% static 'css/style.css' %}" rel="stylesheet"> 
+<link href="{% static 'images/reitter_l.ico' %}" rel="icon"> 
+<title>reitter:編集</title>
+
+<body>
+<h1>
+  <a href="../../"><div style="text-align: center"><p style="background-color:#00FFFF"><font color = "white"><big>・・・Reitter🕊・・・</big></font></p></div></a>
+</h1>
+<a href ="../../">retter:トップ</a> > ✂編集
+
+<p class="komentoran">✂編集</p>
+  <form method="post">
+    {% csrf_token %}
+    <p><big>[{{ tweet.created_at|date:'H:i'}}]のコメント</big></p>
+    <div>
+      <label for="name"><big>　名　前　:</big></label>
+      <input type="text" name="name" value="{{ tweet.name }}">
+    </div>
+    <br>
+    <div>
+      <label for="message"><big>メッセージ:</big></label>
+      <input type="text" name="message" value="{{ tweet.message }}">
+    </div>
+    <br>
+    <input type="submit" class ="sousin">
+  </form>
+  <h2>
+    <div style="text-align: center"><p style="background-color:#00FFFF"><font color = "white">2024@reitter:edit</font></p></div>
+  </h2>
+</body>

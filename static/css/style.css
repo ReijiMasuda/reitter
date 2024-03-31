@@ -1,0 +1,74 @@
+  .center {
+    text-align: center;
+  }
+  .komentoran{
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 4px double #619f60;/* 線 */
+    border-radius: 15px;/* 角丸 */
+    text-align: center;/* テキストの位置 */
+    color: #62a061;/* フォント色 */
+  }
+  .box5 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+  }
+  .box5 p {
+    margin: 0; 
+    padding: 0;
+  }
+  
+  .sousin {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+  }
+
+  .sousin:hover {
+    background: #67c5ff;
+    color: white;
+  }
+
+  .otoiawase{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    position: relative;
+    border-bottom: solid 3px #e3e3e2;
+    color: #2da742;
+  }
+  
+  .otoiawase:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #2da742;
+    width: 15%;
+    bottom: -3px;
+  }
+
+  .twitter__container {
+    padding: 0;
+    background: #ffffff;
+    overflow: hidden;
+    max-width: 400px; 
+    margin: 20px auto;
+    font-size: 80%;
+    border: solid 1px #eeeeee;
+  }
+  
+  .twitter__contents.scroll {
+    height: 300px;
+    overflow-y: scroll;
+  }
+
+
